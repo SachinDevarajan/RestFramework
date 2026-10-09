@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
 from .views import *
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshSlidingView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path('',home,name='/'),
@@ -12,7 +12,7 @@ urlpatterns = [
     path('add_course/',add_course,name='add_course'),
     
     path('token/',TokenObtainPairView.as_view(),name='token'),
-    path('refresh/',TokenRefreshSlidingView.as_view(),name='refresh'),
+    path('refresh/',TokenRefreshView.as_view(),name='refresh'),
     path('login/',userlogin,name='login'),
     
     path('student_generic/',StudentGenericView.as_view(),name='student_generic'),
