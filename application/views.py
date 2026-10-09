@@ -84,7 +84,7 @@ def userlogin(request):
         password = password
     )
     if user:
-        refresh = RefreshToken.for_user(user)
+        refresh = MyToken.for_user(user)
         return Response({
             'message':'Login Successful.....',
             'refresh':str(refresh),
