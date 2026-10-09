@@ -93,12 +93,12 @@ def userlogin(request):
     return Response({'message':'user not found..!!!'})
 
 
-class StudentGenericView(CreateAPIView,ListAPIView):
+class StudentGenericView(CreateAPIView, ListAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
 
-class StudentGenericViewUD(UpdateAPIView,DestroyAPIView):
+class StudentGenericViewUD(UpdateAPIView, DestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     lookup_field = 'id'
